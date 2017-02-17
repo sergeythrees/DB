@@ -34,8 +34,12 @@ public:
 		}
 	}
 
-	std::vector<int> GetAuthorRecordIdS(std::string authorName)
+	std::vector<int> GetIdS(std::string authorName)
 	{
+		if(!m_authors.count(authorName))
+		{
+			throw std::out_of_range("DataBase has not this name");
+		}
 		return m_authors.at(authorName);
 	}
 private:
