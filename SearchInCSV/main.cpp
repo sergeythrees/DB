@@ -1,15 +1,26 @@
-// SearchInCSV.cpp : Defines the entry point for the console application.
-//
-
 #include "stdafx.h"
-#include <iostream>
+#include "ValidationFunctions.h"
 #include "CAuthorsFinder.h"
+static int NUM_OF_ARGUMENTS = 2;
 
 using namespace std;
 
-int main(int argc, char *argv[])
+int main(int argc, char *argv[]) try
 {
-	CAuthorsFinder finder("input/db.csv");
+	string filePath;
+	if (IsValidArgumentsCount(argc, NUM_OF_ARGUMENTS))
+	{
+		filePath = argv[1];
+	}
+	else
+	{
+		cout << endl << "Input file path: ";
+		getline(cin, filePath);
+		cout << endl;
+	}
+
+	CAuthorsFinder finder(filePath);
+	
 	while (!cin.eof() && !cin.fail())
 	{
 		string authorName;
@@ -31,5 +42,9 @@ int main(int argc, char *argv[])
 	}
 
     return 0;
+}
+catch (const std::exception& ex)
+{
+	cout << ex.what() << endl;
 }
 

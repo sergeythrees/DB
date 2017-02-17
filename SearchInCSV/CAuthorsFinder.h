@@ -38,7 +38,7 @@ public:
 	{
 		if(!m_authors.count(authorName))
 		{
-			throw std::out_of_range("DataBase has not this name");
+			throw std::out_of_range("DataBase does not contain this name");
 		}
 		return m_authors.at(authorName);
 	}
