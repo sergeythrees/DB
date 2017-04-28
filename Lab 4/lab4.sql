@@ -1,6 +1,6 @@
 --INSERT--
 INSERT INTO dish
-VALUES (2, 'Соус Напалм', 'Соус', 'Горячее', 'Густое');
+VALUES (2, 'РЎРѕСѓСЃ РќР°РїР°Р»Рј', 'РЎРѕСѓСЃ', 'Р“РѕСЂСЏС‡РµРµ', 'Р“СѓСЃС‚РѕРµ');
 
 INSERT INTO product_in_dish 
 ( id_product_in_dish, id_dish, id_product, weight )
@@ -34,7 +34,7 @@ SET weight = weight * 2
 WHERE id_dish = 5;
 
 --SELECT--
-SELECT dish.name, dish.Категория
+SELECT dish.name, dish.РљР°С‚РµРіРѕСЂРёСЏ
 FROM dish;
 
 SELECT *
